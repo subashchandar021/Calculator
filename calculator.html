@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+      *, *::before, *::after{
+          box-sizing:border-box;
+          font-family: sans-serif;
+          font-weight: normal;
+      }
+      body{
+          padding:0px;
+          margin:0px;
+          background: lightblue;
+      }
+      .calculator-grid{
+          display:grid;
+          justify-content: center;
+          align-content: center;
+          min-height: 100vh;
+          grid-template-columns: repeat(4,100px);
+          grid-template-rows: minmax(120px,auto) repeat(5,100px);
+      }
+      .calculator-grid > button{
+          cursor: pointer;
+          font-size: 20px;
+          border:1px solid grey;
+          outline: none;
+          background-color:rgba(255,255,255,.75); 
+    }
+    .calculator-grid > button:hover{
+        background-color: rgba(184, 177, 177, 0.959);
+       
+    }
+    .span-two{
+        grid-column: span 2;
+    }
+    .output{
+        grid-column: 1/-1;
+        background-color:grey;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex-direction: column;
+        padding:15px;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .output .previous-operand{
+        color: honeydew;
+        font-size: 1.5rem;
+    }
+    .output .current-operand{
+        color: white;
+        font-size: 3.5rem;
+    }
+    </style>
+</head>
+<body>
+    <div class="calculator-grid">
+        <div class="output">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+        <button data-all-clear class="span-two">C</button>
+        <button data-delete>DEL</button>
+        <button data-operation>÷</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>*</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>-</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>+</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-equals class="span-two">=</button>
+    </div>
+<script src="script.js" defer></script>
+</body>
+</html> 
